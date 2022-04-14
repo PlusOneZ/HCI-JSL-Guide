@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>济事楼参观指北</title>
+    <!-- importing jquery -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- index.js  -->
+    <script src="js/index.js"></script>
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="map-btn">
+                <a href="map.html">
+                    <i>
+                        <!-- todo: awesome fonts here -->
+                        <svg t="1649927405834" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="2591" width="65" height="65">
+                            <path
+                                d="M138.688 762.112l186.624 83.008V261.888L138.688 178.88v583.232z m524.736 66.048L400 959.168V960l-0.896-0.384-0.832 0.384-72.96-32.896v-0.32L64 810.688V64l296.64 131.84L624 65.28V64l1.28 0.64 0.832-0.448 41.6 19.2L960 213.376V960l-296.576-131.84zM624 148.608l-224 111.04v616.128l224-111.36V148.608z m74.688 613.504l186.624 83.008V261.888l-186.624-83.008v583.232z"
+                                fill="#262626" p-id="2592">
+                            </path>
+                        </svg>
+                    </i>
+                </a>
+            </div>
+            <div class="title">
+                <a href="/index.html">
+                    <h1>济事楼参观指北</h1>
+                </a>
+            </div>
+            <div class="search-btn">
+                <a href="#">
+                    <i>
+                        <!-- todo: awesome fonts here -->
+                        
+                    </i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="map-main">
+        <!-- map plugin -->
+        <img src="images/jsl-map.png" alt="map of jishi building" class="map" usemap="#jsl-map">
+
+        <!-- map annotations -->
+        <map name="jsl-map">
+            <!-- 电梯 -->
+            <area shape="circle" coords="69, 504, 10" href="/index.html?room=电梯" alt=电梯">
+            <!-- 418 -->
+            <area shape="circle" coords="180, 526, 10" href="/index.html?room=418" alt="419">
+            <!-- 417 -->
+            <area shape="circle" coords="214, 408, 10" href="/index.html?room=417" alt="417">
+            <!-- 416 -->
+            <area shape="circle" coords="261, 551, 10" href="/index.html?room=416" alt="416">
+            <!-- 415 -->
+            <area shape="circle" coords="290, 431, 10" href="/index.html?room=415" alt="415">
+            <!-- 414 -->
+            <area shape="circle" coords="365, 585, 10" href="/index.html?room=414" alt="414">
+            <!-- 413 -->
+            <area shape="circle" coords="384, 458, 10" href="/index.html?room=413" alt="413">
+            <!-- 412 -->
+            <area shape="circle" coords="447, 607, 10" href="/index.html?room=412" alt="412">
+            <!-- 411 -->
+            <area shape="circle" coords="475, 471, 10" href="/index.html?room=411" alt="411">
+            <!-- 410 -->
+            <area shape="circle" coords="567, 584, 10" href="/index.html?room=410" alt="410">
+            <!-- 409 -->
+            <area shape="circle" coords="554, 450, 10" href="/index.html?room=409" alt="409">
+            <!-- 408 -->
+            <area shape="circle" coords="666, 528, 10" href="/index.html?room=408" alt="408">
+            <!-- 407 -->
+            <area shape="circle" coords="672, 380, 10" href="/index.html?room=407" alt="407">
+            <!-- 厕所1（男） -->
+            <area shape="circle" coords="804, 299, 10" href="/index.html?room=厕所1（男）" alt="厕所1（男）">
+            <!-- 厕所1（女） -->
+            <area shape="circle" coords="814, 458, 10" href="/index.html?room=厕所1（女）" alt="厕所1（女）">
+
+            <!-- 401 -->
+            <area shape="circle" coords="932, 309, 10" href="/index.html?room=401" alt="401">
+
+        </map>
+    </main>
+
+</body>
+
+<script>
+    setup();
+    $("#cir1").click(() => { console.log("haha"); centerWith(currentMiddle - 2) });
+    $("#cir2").click(() => { console.log("haha"); centerWith(currentMiddle - 1) });
+    $("#cir4").click(() => { centerWith(currentMiddle + 1) });
+    $("#cir5").click(() => { centerWith(currentMiddle + 2) });
+</script>
+
+</html>

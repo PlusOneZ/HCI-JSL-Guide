@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>济事楼参观指北</title>
+    <!-- importing jquery -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- index.js  -->
+    <script src="js/index.js"></script>
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="map-btn">
+                <a href="map.html">
+                    <i>
+                        <!-- todo: awesome fonts here -->
+                        <svg t="1649927405834" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="2591" width="65" height="65">
+                            <path
+                                d="M138.688 762.112l186.624 83.008V261.888L138.688 178.88v583.232z m524.736 66.048L400 959.168V960l-0.896-0.384-0.832 0.384-72.96-32.896v-0.32L64 810.688V64l296.64 131.84L624 65.28V64l1.28 0.64 0.832-0.448 41.6 19.2L960 213.376V960l-296.576-131.84zM624 148.608l-224 111.04v616.128l224-111.36V148.608z m74.688 613.504l186.624 83.008V261.888l-186.624-83.008v583.232z"
+                                fill="#262626" p-id="2592">
+                            </path>
+                        </svg>
+                    </i>
+                </a>
+            </div>
+            <div class="title ">
+                <h1>济事楼参观指北</h1>
+            </div>
+            <input type="text" class="search hind">
+            <div class="search-btn">
+                <a href="#">
+                    <i>
+                        <!-- todo: awesome fonts here -->
+                        <svg t="1649927456304" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="3477" width="65" height="65">
+                            <path
+                                d="M448 85.333333a362.666667 362.666667 0 1 0 207.189333 660.352l174.208 174.250667a64 64 0 1 0 90.538667-90.538667l-174.250667-174.208A362.666667 362.666667 0 0 0 448 85.333333zM213.333333 448a234.666667 234.666667 0 1 1 469.333334 0 234.666667 234.666667 0 0 1-469.333334 0z"
+                                p-id="3478">
+                            </path>
+                        </svg>
+                    </i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- view order: 4 2 1 3 5 -->
+
+        <!-- contents -->
+        <div id="con1" class="sub-sub-content">
+
+        </div>
+
+        <div id="con2" class="sub-content">
+
+        </div>
+
+        <div id="con3" class="main-content">
+
+        </div>
+
+        <div id="con4" class="sub-content">
+
+        </div>
+
+        <div id="con5" class="sub-sub-content">
+
+        </div>
+
+        <!-- circles -->
+        <div id="cir1" class="sub-sub-circle">
+            <div class="line"></div>
+        </div>
+
+        <div id="cir2" class="sub-circle">
+            <div class="line"></div>
+        </div>
+
+        <div id="cir3" class="main-circle">
+            <div class="line"></div>
+        </div>
+
+        <div id="cir4" class="sub-circle">
+            <div class="line"></div>
+        </div>
+
+        <div id="cir5" class="sub-sub-circle">
+            <div class="line"></div>
+        </div>
+
+    </main>
+
+</body>
+
+<script>
+    setup();
+    $("#cir1").click(() => { console.log("haha"); centerWith(currentMiddle - 2) });
+    $("#cir2").click(() => { console.log("haha"); centerWith(currentMiddle - 1) });
+    $("#cir4").click(() => { centerWith(currentMiddle + 1) });
+    $("#cir5").click(() => { centerWith(currentMiddle + 2) });
+
+    let searchToken = false
+    $(".search-btn").click( () => {
+        if (searchToken) {
+            $(".search").addClass("hind");
+            $(".title").removeClass("hind");
+            searchToken = false;
+            rooms = rooms_org;
+            currentMiddle = Math.floor(rooms.length / 2);
+            setup();
+        } else {
+            $(".search").removeClass("hind");
+            $(".title").addClass("hind");
+            searchToken = true;
+        }
+    })
+
+    $(".search").on("input", function() {
+        console.log($(this).val())
+        if (searchToken) {
+            rooms = search($(this).val());
+            setup();
+        }
+    })
+</script>
+
+</html>
